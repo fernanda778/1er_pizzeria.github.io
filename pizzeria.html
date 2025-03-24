@@ -1,0 +1,32 @@
+<DOCTYPE html>
+    <html lang="es"> <!-- el lamg es para decirle al codigo en que lenguaje estara-->
+    <head>
+        <title>Ppagina_p</title>
+        <link rel="stylesheet" href="style1.css">
+        <meta charset="UTF-8"> <!--charset nos permite tener cualquieri caracter, -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--biupor, ancho de la pagina = que el dispositivo, elinitial=restablecer zoom  -->
+    </head>
+    <body>
+        <div class="lov"> 
+        <h1>¡Bienvenido!</h1>
+        <p class="tu" ><b>Si desea ordenar en nuestra pagina, <br>
+            por favor escriba nombre y fecha</b> </p>
+        </div> <!--esto solo es para agregar elementos-->
+        <form id="pizzaForm" action="pedido.html" method="GET">
+
+        <ol>
+            <li><p><b>Nombre:</b></p></li>
+            <label for="name">     </label><br>
+            <input type="text" name="name" placeholder=" escribe tu nombre " required><br><br>
+
+            <li><p><b>Fecha: </b></p></li> <!--esto es una viñeta o numero de la lista-->
+            <label for="date">     </label><br>
+            <input type="date" name="date" required ><br><br>
+        </ol> <!--esto es para crear una lista-->
+    
+            <button type="submit">Enviar</button> <br>
+            <button type="reset">Borrar</button><br>
+        </form>
+    </body>
+    </html>

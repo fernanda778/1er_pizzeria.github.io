@@ -1,0 +1,156 @@
+<DOCTYPE html>
+    <html lang="es">
+    <head>
+        <title>pedidos</title>
+        <link rel="stylesheet" href="style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+</head>
+<body>
+    <div class="cua" >
+    <h1>¡Bienvenido!</h1>
+    <p><b>Gracias, por visitarnos el dia de hoy <span id="userName" > </b> </p>
+        <p>Estamos muy felices de que nos elegiste </p>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const date = params.get('date');
+
+        document.getElementById('userName').textContent = name || "Usuario";
+        document.getElementById('currentDate').textContent = date || "una fecha desconocida";
+    </script>
+
+<h1>¡Elige tus Pizzas Favoritas!</h1>
+<p>Selecciona las pizzas que deseas y calcula el precio total.</p>
+
+<div class="p1">
+    <label for="pizza1">pizza1:</label>
+    <select id="piz1">
+        <option value="0">escoje un tipo</option>
+        <option value="100">Mexicana ($100)</option>
+        <option value="120">Pepperoni ($120) </option>
+        <option value="110">Hawaiana ($110)</option>
+    </select>
+</div>
+<div class="p2">
+    <label for="pizza2">pizza2:</label>
+    <select id="piz2">
+        <option value="0">escoje un tipo</option>
+        <option value="100">Mexicana ($100)</option>
+        <option value="120">Pepperoni ($120) </option>
+        <option value="110">Hawaiana ($110)</option>
+    </select>
+</div>
+<div class="p3">
+    <label for="pizza3">pizza3:</label>
+    <select id="piz3">
+        <option value="0">escoje un tipo</option>
+        <option value="100">Mexicana ($100)</option>
+        <option value="120">Pepperoni ($120) </option>
+        <option value="110">Hawaiana ($110)</option>
+    </select>
+</div>            
+<!-- Caja de listado= seleccionar una pizza -->
+<h2>Agrega Complementos</h2>
+<div class="input-group">
+    <label>
+        <input type="checkbox" name="complement" value="30"> Extra queso $30
+    </label><br>
+    <label>
+        <input type="checkbox" name="complement" value="60"> Refresco $60
+    </label><br>
+    <label>
+        <input type="checkbox" name="complement" value="20" > Jugo $20
+    </label><br>
+    <label>
+        <input type="checkbox" name="complement" value="30 "> Papas $30
+    </label>
+</div>
+<!-- checkbox con los complementos  -->
+
+<h2>Método de entrega</h2>
+<div class="input-group">
+    <label>
+        <input type="radio" name="delivery-method" value="30"> A domicilio (+$30)
+    </label><br>
+    <label>
+        <input type="radio" name="delivery-method" value="0"> Para llevar (sin costo adicional)
+    </label>
+</div>
+<!-- Radio para la entrega -->
+
+<script>
+    let pizzaPrice = 0; 
+    let complementPrice = 0;
+    let deliveryPrice = 0; 
+    //primero debemos tener los valores =0
+
+    
+    function updateTotal() { 
+        const total = pizzaPrice + complementPrice + deliveryPrice;
+        document.getElementById('totalPrice').textContent = total.toFixed(2);
+        document.getElementById('result').style.display = 'block'; 
+    }
+    function limpi() {
+            document.querySelectorAll('input').forEach(input => input.checked = false);
+        }
+
+    function goToNextPage() {
+    const total = pizzaPrice + complementPrice + deliveryPrice;
+    localStorage.setItem('totalPrice', total.toFixed(2)); 
+    window.location.href = 'pago.html'; 
+}
+
+    function calculateTotal() {
+    pizzaPrice = 0;
+
+    const pizza1 = document.getElementById('piz1');
+    pizzaPrice += parseFloat(pizza1.value) || 0;
+
+    const pizza2 = document.getElementById('piz2');
+    pizzaPrice += parseFloat(pizza2.value) || 0;
+
+    const pizza3 = document.getElementById('piz3');
+    pizzaPrice += parseFloat(pizza3.value) || 0;
+
+    const complements = document.getElementsByName('complement');
+    complementPrice = 0;
+    complements.forEach(complement => 
+    { if (complement.checked) {
+            complementPrice += parseFloat(complement.value);
+        }
+    });
+
+    const deliveryMethods = document.getElementsByName('delivery-method');
+    deliveryPrice = 0;
+    deliveryMethods.forEach(method => 
+    {if (method.checked) {
+            deliveryPrice = parseFloat(method.value);
+        }
+    });
+
+    updateTotal();
+}
+
+    function siguiente() {
+    const total = pizzaPrice + complementPrice + deliveryPrice;
+    localStorage.setItem('totalPrice', total.toFixed(2)); 
+    window.location.href = 'pago.html'; 
+}
+function regre() {
+            window.location.href = 'pedido.html';
+        }
+
+</script>
+<button onclick="calculateTotal()">Calcular Total</button>
+<button onclick="regre()">Regresar</button>
+<button onclick="limpi()">Borrar</button>
+<button onclick="siguiente()">Proceder al Pago</button>
+<div class="result" id="result">
+    Total a pagar: $<span id="totalPrice">0</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+/*pizzeria*/
+p {
+    color: rgb(6, 6, 6);
+    font-size: 24px;
+    text-align: left; /* Alinea los párrafos a la izquierda */
+    margin:auto;
+}
+
+.lov {
+    text-align: center; /* El título permanece centrado */
+    background-color: rgba(1, 1, 199, 0.5);
+    color: black;
+    padding: 0 0 15px 10px;
+    
+    width: 600px;
+
+}
+
+form {
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    text-align: left; /* Alinea el contenido del formulario a la izquierda */
+    max-width: 400px;
+    margin: 10px;
+}
+
+ol {
+    text-align: left; /* Alinea la lista de párrafos a la izquierda */
+}
+
+button {
+    display: block; /* Asegura que los botones estén en línea separada */
+    padding: 0px 0px;
+    margin: 10px;
+    font-size: 16px;
+    margin-left: 0; /* Alinea los botones a la izquierda */
+    margin-right: auto;
+}
+
+body {
+    background-image: url(' 1er_fondo.jpg'); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen */
+    background-size: cover; /* La imagen ocupará toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: top; /* Centra la imagen */
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+li {
+    margin-left: auto; /* Alinea los elementos de la lista hacia la izquierda */
+}

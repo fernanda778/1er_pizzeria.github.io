@@ -1,0 +1,17 @@
+/*pedido*/
+body {
+    background-image: url('2do_fonfo.jpg '); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen */
+    background-size: cover; /* La imagen ocupará toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: top;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+.cua{
+    background: rgb(135, 190, 218);
+    text-align: center;
+    padding: 0px 0 15px 10px;
+    width: 600px;
+    margin:auto;
+}

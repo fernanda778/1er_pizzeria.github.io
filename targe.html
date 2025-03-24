@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Método de Pago con Tarjeta</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+    <h1>PAGO CON TARJETA</h1>
+    <p>Total a pagar: $<span id="totalPrice">0</span></p>
+
+    <script>
+        const totalPrice = localStorage.getItem('totalPrice'); 
+        document.getElementById('totalPrice').textContent = totalPrice || "0";
+    </script>
+    <div id="card-section">
+        <div class="input-group">
+            <label>Número de tarjeta:</label>
+            <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+        </div>
+    </div>
+    <div id="statusMessage" style="margin-top: 10px; color: red;"></div>
+
+    <button onclick="limpiar()">Borrar</button>
+    <button onclick="processCardPayment()">Pagar</button>
+    <button onclick="regre()">Regresar</button>
+
+    <script>
+        const simulatedCardBalance = 600;
+        function processCardPayment() {
+            const amount = parseFloat(document.getElementById('totalPrice').textContent) || 0; 
+            const statusMessage = document.getElementById('statusMessage');
+
+            if (simulatedCardBalance < amount) {
+                statusMessage.textContent = "Saldo insuficiente";
+            } else {
+                statusMessage.textContent = "Pago realizado";
+            }
+        }
+
+        // Limpia todos los campos
+        function limpiar() {
+            document.querySelectorAll('input').forEach(input => input.value = "");
+            document.getElementById('statusMessage').textContent = "";
+        }
+
+        // Redirige a otra página
+        function regre() {
+            window.location.href = 'pago.html';
+        }
+    </script>
+</body>
+</html>
+
+
