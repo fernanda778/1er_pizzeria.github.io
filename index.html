@@ -1,32 +1,61 @@
-<DOCTYPE html>
-    <html lang="es"> <!-- el lamg es para decirle al codigo en que lenguaje estara-->
-    <head>
-        <title>Ppagina_p</title>
-        <link rel="stylesheet" href="style1.css">
-        <meta charset="UTF-8"> <!--charset nos permite tener cualquieri caracter, -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--biupor, ancho de la pagina = que el dispositivo, elinitial=restablecer zoom  -->
-    </head>
-    <body>
-        <div class="lov"> 
-        <h1>¡Bienvenido!</h1>
-        <p class="tu" ><b>Si desea ordenar en nuestra pagina, <br>
-            por favor escriba nombre y fecha</b> </p>
-        </div> <!--esto solo es para agregar elementos-->
-        <form id="pizzaForm" action="pedido.html" method="GET">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Opciones</title>
+    <style>
+        body {
+    background-image: url('image/i-luna_mine1.jpg'); 
+    text-align: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: top; 
 
-        <ol>
-            <li><p><b>Nombre:</b></p></li>
-            <label for="name">     </label><br>
-            <input type="text" name="name" placeholder=" escribe tu nombre " required><br><br>
+        }
+        .option-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #494d96;
+            border-radius: 8px;
+            background-color: #5c599a;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-            <li><p><b>Fecha: </b></p></li> <!--esto es una viñeta o numero de la lista-->
-            <label for="date">     </label><br>
-            <input type="date" name="date" required ><br><br>
-        </ol> <!--esto es para crear una lista-->
-    
-            <button type="submit">Enviar</button> <br>
-            <button type="reset">Borrar</button><br>
-        </form>
-    </body>
-    </html>
+        .option {
+            margin: 15px 0;
+        }
+
+        .option a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .option a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Elige una Opción</h1>
+
+    <div class="option-container">
+        <div class="option">
+            <h2>Opción 1</h2>
+            <p> proyecto individual </b></p>
+            <a href="l-index.html"  target="_blank">Ir a Opción 1</a>
+        </div>
+        <div class="option">
+            <h2>Opción 2</h2>
+            <p>pizzeria  </b></p>
+            <a href="p-index.html" target="_blank">Ir a Opción 2</a>
+        </div>
+    </div>
+</body>
+</html>
