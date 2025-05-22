@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style5.css">
 </head>
-
 <body>
     <h1>PAGO EN EFECTIVO</h1>
     <p>Total a pagar: $<span id="totalPrice">0</span></p>
@@ -23,7 +22,9 @@
             <label>Cambio: $</label>
             <input type="text" id="change" placeholder="Cambio" readonly>
         </div>
-        <button onclick="calculateChange()">Calcular</button>
+        <button onclick="calculateChange()">Calcular</button><br>
+        <button onclick="bor()">Borrar</button>
+    <button onclick="regresar()">Regresar</button>
     </div>
 
 
@@ -49,11 +50,9 @@ function bor() {
     document.getElementById('cash-section').classList.add('hidden'); // Oculta la sección de efectivo
 }
 function regresar() {
-    window.location.href = 'pago.html'; 
+    window.location.href = 'p-pago.html'; 
 }
 </script>
-    <button onclick="bor()">Borrar</button>
-    <button onclick="regresar()">Regresar</button>
+
 </body>
 </html>
-
